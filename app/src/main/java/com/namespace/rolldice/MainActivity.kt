@@ -6,16 +6,17 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.namespace.rolldice.databinding.ActivityMainBinding
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        var rollButton : Button = findViewById(R.id.roll_button)
+        var binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        rollButton.text = "LET's roll"
-        rollButton.setOnClickListener {
+        binding.rollButton.text = "LET's roll"
+        binding.rollButton.setOnClickListener {
            rollDice()
 
         }
